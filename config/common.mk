@@ -168,21 +168,23 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/blaze/config/partner_gms.mk
 
-# Enable Google Play system updates support
-PRODUCT_SOONG_NAMESPACES += \
-    vendor/blaze/apex
-
-PRODUCT_PACKAGES += \
-    ModuleMetadataGooglePrebuilt
-
 # Inherit from rro_overlays config
 $(call inherit-product, vendor/blaze/config/rro_overlays.mk)
+
+# Branding
+include vendor/blaze/config/branding.mk)
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/blaze/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/blaze/overlay/common
 
 # Versioning
 include vendor/blaze/config/version.mk
+
+# Inherit from apex config
+$(call inherit-product, vendor/blaze/config/apex.mk)
+
+# Inherit from GMS product config
+$(call inherit-product, vendor/gms/gms_full.mk)
 
 # BootAnimation
 include vendor/blaze/config/bootanimation.mk
