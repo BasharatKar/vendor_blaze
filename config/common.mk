@@ -180,20 +180,11 @@ DEVICE_PACKAGE_OVERLAYS += vendor/blaze/overlay/common
 # Versioning
 include vendor/blaze/config/version.mk
 
+# Inherit from GMS product config
+$(call inherit-product, vendor/gms/gms_full.mk)
+
 # Inherit from apex config
-$(call inherit-product, vendor/blaze/config/apex.mk)
-ifeq ($(TARGET_FLATTEN_APEX),false)
-
-$(call inherit-product, vendor/blaze/config/apex.mk)
-
-else
-# Hide "Google Play System Updates" if Apex disabled
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/blaze/overlay_apex_disabled
-
-DEVICE_PACKAGE_OVERLAYS += \
-    vendor/blaze/overlay_apex_disabled/common
-endif
+$(call inherit-product, vendor/blazee/config/apex.mk))
 
 # Inherit from GMS product config
 $(call inherit-product, vendor/gms/gms_full.mk)
