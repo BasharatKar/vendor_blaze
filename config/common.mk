@@ -183,7 +183,11 @@ include vendor/blaze/config/version.mk
 # Inherit from apex config
 $(call inherit-product, vendor/blaze/config/apex.mk)
 ifeq ($(TARGET_FLATTEN_APEX),false)
+
 $(call inherit-product, vendor/blaze/config/apex.mk)
+$(call inherit-product, vendor/blaze/config/apex.mk)
+$(call inherit-product, vendor/blaze/config/system_sepolicy.mk)
+
 else
 # Hide "Google Play System Updates" if Apex disabled
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
