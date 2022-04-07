@@ -187,7 +187,7 @@ $(call inherit-product, vendor/blaze/config/apex.mk)
 else
 # Hide "Google Play System Updates" if Apex disabled
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/evolution/overlay_apex_disabled
+    vendor/blaze/overlay_apex_disabled
 
 DEVICE_PACKAGE_OVERLAYS += \
     vendor/blaze/overlay_apex_disabled/common

@@ -16,14 +16,14 @@
 =
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/evolution/apex/overlay
+    vendor/blaze/apex/overlay
 
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/evolution/apex/overlay/common
+    vendor/blaze/apex/overlay/common
 
 # Enable Google Play system updates support
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/evolution/apex
+    vendor/blaze/apex
 
 # ModuleMetadata
 PRODUCT_PACKAGES += \
